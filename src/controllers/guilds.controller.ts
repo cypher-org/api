@@ -9,7 +9,7 @@ export default class GuildsController {
         this.initializeRoutes();
     }
 
-    private async initializeRoutes(){
+    private initializeRoutes(){
     this.router.get(`${this.path}/search/byid/:id`, this.SearchById)
     }
     
