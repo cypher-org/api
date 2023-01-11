@@ -1,12 +1,12 @@
 # CypherBot API
-**CypherBot for the first time makes an open source api 
-that you can contribute and change.**
+**In the first time, CypherBot has released it's API for public!
+You can now create the tools and plugins you want and modify them to your liking.**
 
 # Contribution
 **How do you can contribute?**
-- First, make pull request then the reviewers will see it and review your code or your change so it's can be merge.
-- You can also call anyone of the developers in the [Discord Server](https://discord.gg/YJ65XdzpaY) to review the change you made.
-- After your first contribution you will get role called `Contributors` on our [Discord Server](https://discord.gg/YJ65XdzpaY).
+- First, make pull request then we will review your changes, if it's satisfied, it will be merged.
+- You can call our developers in the [Discord Server](https://discord.gg/YJ65XdzpaY) to review the changes you made.
+- After your first contribution you will be awarded by getting `Contributors` role in our [Discord Server](https://discord.gg/YJ65XdzpaY).
 
 # Guide
 **SOON**
