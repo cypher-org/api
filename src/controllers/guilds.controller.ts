@@ -15,7 +15,8 @@ export default class GuildsController {
     
     private async SearchById(req: express.Request<{ id: string }>, res: express.Response){
         let { id } = req.params;
-        const guild = await client.guilds.fetch(id);
-        res.send(guild);
+        let guild = await client.guilds.fetch(id);
+        if(!guild) return res.status(404).send("THE ID YOU ENTERED IS UNDEFINED OR THE GUILD IS NOT FOUND");
+        return res.status(200).send(guild);
     }
 }
