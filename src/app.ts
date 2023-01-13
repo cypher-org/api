@@ -1,5 +1,7 @@
 import express from 'express';
 import logger from './utilities/logger';
+import client from './utilities/discord_client';
+import connect from './database/connect';
 
 export default class App {
     private app: express.Application 
@@ -18,6 +20,7 @@ export default class App {
 
     public listen(port: number) {
         this.app.listen(port, () => {
+            (client as any).database = connect();
             logger.info(`APP STATRED AT PORT (${port})`);
         });
     }

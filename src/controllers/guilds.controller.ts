@@ -1,5 +1,6 @@
 import express from 'express';
 import { PermissionsBitField } from 'discord.js';
+import { APIRepliesInterface } from '../types/api';
 import client from '../utilities/discord_client';
 
 export default class GuildsController {
@@ -9,14 +10,18 @@ export default class GuildsController {
         this.initializeRoutes();
     }
 
-    private initializeRoutes(){
+    private initializeRoutes() {
     this.router.get(`${this.path}/search/byid/:id`, this.SearchById)
     }
     
     private async SearchById(req: express.Request<{ id: string }>, res: express.Response) {
         let { id } = req.params;
         let guild = client.guilds.cache.get(id);
-        if(!guild) return res.status(404).send({"message": "Unknown Guild"});
-        return res.status(200).send(guild);
+        let reply: APIRepliesInterface = { "status": 200, "message": guild };
+        if(!guild) {
+            reply.status = 404,
+            reply.message = "Unknown Guild"
+        };
+       res.status(reply.status).send({ "message": reply.message });
     }
 }
