@@ -1,5 +1,4 @@
 import express from 'express';
-import client from '../utilities/discord_client';
 
 export default class DefaultController {
     public router: express.Router = express.Router();
