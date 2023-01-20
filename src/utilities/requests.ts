@@ -1,6 +1,5 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { TOKEN } from '../config';
-import { APIGuild, APIGuildMember } from 'discord-api-types/v10';
 
 export const getGuildById = async (id: string) => {
     let guild = await axios({

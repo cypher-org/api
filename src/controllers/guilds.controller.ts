@@ -10,7 +10,7 @@ export default class GuildsController {
     }
 
     private initializeRoutes() {
-    this.router.get(`${this.path}/search/byid/:id`, this.SearchById)
+    this.router.get(`${this.path}/:id`, this.SearchById)
     }
     
     private async SearchById(req: express.Request<{ id: string }>, res: express.Response) {
