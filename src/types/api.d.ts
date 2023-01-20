@@ -1,8 +1,8 @@
-export interface APIRepliesInterface {
+export interface APIReplies {
     status: number,
     message: any
 }
 
-export interface APIGuildReply extends APIRepliesInterface {
+export interface GuildReply extends APIReplies {
     guild?: any
 }

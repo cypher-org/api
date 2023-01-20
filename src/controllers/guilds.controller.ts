@@ -1,6 +1,6 @@
 import express from 'express';
 import { getGuildById } from '../utilities/requests';
-import { APIGuildReply } from '../types/api';
+import { GuildReply } from '../types/';
 
 export default class GuildsController {
     public path: string = '/guilds';
@@ -16,7 +16,7 @@ export default class GuildsController {
     private async SearchById(req: express.Request<{ id: string }>, res: express.Response) {
         let { id } = req.params;
         let guild = await getGuildById(id);
-        let reply: APIGuildReply = { "status": 200, "message": "Good", "guild": guild};
+        let reply: GuildReply = { "status": 200, "message": "Good", "guild": guild};
         if(!guild) {
             reply.status = 404,
             reply.message = "Unknown Guild"
