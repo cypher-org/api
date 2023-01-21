@@ -1,16 +1,15 @@
 import express from 'express';
 import { getGuildById } from '../utilities/requests';
 import { GuildReply } from '../types/';
+import BaseController from '../base/controller';
 
-export default class GuildsController {
-    public path: string = '/guilds';
-    public router: express.Router = express.Router();
-    constructor(){
-        this.initializeRoutes();
+export default class GuildsController extends BaseController {
+    public constructor(path: string){
+        super(path);
     }
 
-    private initializeRoutes() {
-    this.router.get(`${this.path}/:id`, this.SearchById)
+    protected override initializeRoutes(path: string) {
+    this.router.get(`${path}/:id`, this.SearchById)
     }
     
     private async SearchById(req: express.Request<{ id: string }>, res: express.Response) {

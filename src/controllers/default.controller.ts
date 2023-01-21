@@ -1,16 +1,8 @@
 import express from 'express';
+import BaseController from '../base/controller';
 
-export default class DefaultController {
-    public router: express.Router = express.Router();
-    constructor(){
-        this.initializeRoutes();
-    }
-
-    private initializeRoutes(){
-        this.router.get('/', this.default)
-    }
-
-    private async default(req: express.Request, res: express.Response){
-        return res.sendStatus(200);
+export default class DefaultController extends BaseController {
+    public constructor(path: string){
+        super(path);
     }
 }
